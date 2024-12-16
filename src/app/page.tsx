@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 const Page = () => {
 
@@ -15,8 +16,12 @@ const Page = () => {
                     Vamos começar?
                 </p>
                 <div className="flex gap-4">
-                    <Button className="px-4 py-2 font-bold rounded w-28 md:w-32">Criar conta</Button>
-                    <Button className="px-4 py-2 font-bold text-white rounded w-28 md:w-32 bg-rose-700 hover:bg-rose-800">Login</Button>
+                    <Button className="px-4 py-2 font-bold rounded w-28 md:w-32" asChild>
+                        <Link href={"/signup"}>Criar conta</Link>
+                    </Button>
+                    <Button className="px-4 py-2 font-bold text-white rounded w-28 md:w-32 bg-rose-700 hover:bg-rose-800" asChild>
+                        <Link href={"/signin"}>Login</Link>
+                    </Button>
                 </div>
             </section>
             <section className="items-center justify-center flex-1 hidden md:flex">

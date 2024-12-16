@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    body::after {
+        content: '';
+        position: fixed;
+        background-image: url('/assets/noise.webp');
+        background-size: auto, cover;
+        inset: 0;
+        z-index: 100;
+        opacity: 0.05;
+        pointer-events: none;
+    }
+
+}

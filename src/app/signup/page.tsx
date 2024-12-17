@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import { SignUpForm } from "./form";
 
 const Page = () => {
@@ -12,6 +13,7 @@ const Page = () => {
                 </p>
             </div>
             <SignUpForm />
+
         </div>
     );
 

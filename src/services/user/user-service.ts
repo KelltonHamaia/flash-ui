@@ -54,9 +54,15 @@ export const checkToken = async (token: string) => {
     return data;
 }
 
-export const resetPassword = async (userId: string, password: string, confirmPassword: string) => {
-    const { data } = await userRequest.post(`/recoveraccount/createnewpassword"`, {
-        userId, password, confirmPassword
+type ResetPassword = {
+    userId: string, 
+    password: string, 
+    confirmPassword: string
+}
+
+export const resetPassword = async (resetData: ResetPassword) => {
+    const { data } = await userRequest.post(`/recoveraccount/createnewpassword`, {
+        resetData
     });
 
     return data;

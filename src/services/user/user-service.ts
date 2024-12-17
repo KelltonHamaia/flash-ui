@@ -62,7 +62,9 @@ type ResetPassword = {
 
 export const resetPassword = async (resetData: ResetPassword) => {
     const { data } = await userRequest.post(`/recoveraccount/createnewpassword`, {
-        resetData
+        userId: resetData.userId,
+        password: resetData.password,
+        confirmPassword: resetData.confirmPassword 
     });
 
     return data;

@@ -35,6 +35,7 @@ export const ForgotPasswordForm = () => {
                 }
             })
         } catch (error) {
+            router.push("/forgotpassword?error=true")
             Notification({ message: "Este e-mail não foi encontrado. Verifique novamente", type: "error" })
             console.log(error)
         }

@@ -3,6 +3,7 @@ import { Fira_Code } from "next/font/google";
 import "@/styles/globals.css";
 import "@/styles/themes.css";
 import { GlobalQueryClient } from "@/providers/query-client-provider";
+import { Toaster } from "sonner";
 
 
 const firaCode = Fira_Code({ subsets: ["latin"] });
@@ -18,6 +19,7 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
             <body
                 className={`${firaCode.className} ${firaCode.className} antialiased dark`}
             >
+                <Toaster />
                 <GlobalQueryClient>
                     {children}
                 </GlobalQueryClient>

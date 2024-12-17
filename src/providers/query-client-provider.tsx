@@ -15,7 +15,6 @@ export const GlobalQueryClient = ({ children }: Props) => {
         <QueryClientProvider client={queryClient}>
             {children}
             <ReactQueryDevtools
-                initialIsOpen={false}
                 buttonPosition="bottom-right"
                 position="right"
             />

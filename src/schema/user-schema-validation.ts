@@ -20,8 +20,6 @@ export const validateUserEntries = z.object({
     password: z.string(requiredError),
 });
 
-export type NewUserdata = z.infer<typeof validateUserData>;
-
 export const updateUserData = z.object({
     name: z.string(requiredError).min(2, "Nome deve ter no mínimo 2 caracteres").optional(),
     email: z.string(requiredError).email("Informe um email válido").optional(),
@@ -33,3 +31,8 @@ export const updateUserData = z.object({
     message: "As senhas não conferem.",
     path: ["confirmPassword"]
 });
+
+
+export type NewUserdata = z.infer<typeof validateUserData>;
+export type UserEntries = z.infer<typeof validateUserEntries>;
+export type UpdateUserdata = z.infer<typeof updateUserData>;

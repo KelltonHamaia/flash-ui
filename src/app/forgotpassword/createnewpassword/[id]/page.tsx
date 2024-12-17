@@ -1,6 +1,13 @@
+"use server"
 import { UpdatePassword } from "./form";
 
-const Page = () => {
+type Props = {
+    params: Promise<{ id: string }>
+}
+
+const Page = async ({ params }: Props) => {
+
+    const userId = (await params).id;
 
     return (
         <div className='container grid max-w-5xl min-h-screen grid-cols-1 gap-5 p-5 mx-auto tracking-tighter lg:grid-cols-5 lg:flex-row lg:items-center'>
@@ -11,7 +18,7 @@ const Page = () => {
                     Informe sua <span className="text-indigo-600">nova senha</span> e confirme para continuar.
                 </p>
             </div>
-            <UpdatePassword />
+            <UpdatePassword userId={userId} />
         </div>
     );
 

@@ -37,3 +37,27 @@ export const updateUser = async (userData: UpdateUserdata) => {
 
     return data;
 }
+
+export const recoverPassword = async (email: string) => {
+    const { data } = await userRequest.post("/recoveraccount", {
+        email: email
+    });
+
+    return data;
+}
+
+export const checkToken = async (token: string) => {
+    const { data } = await userRequest.post(`/recoveraccount/checktoken`, { 
+        token: token
+    });
+
+    return data;
+}
+
+export const resetPassword = async (userId: string, password: string, confirmPassword: string) => {
+    const { data } = await userRequest.post(`/recoveraccount/createnewpassword"`, {
+        userId, password, confirmPassword
+    });
+
+    return data;
+}
